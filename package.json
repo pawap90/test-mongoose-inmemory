@@ -1,0 +1,26 @@
+{
+  "name": "test-mongoose-inmemory",
+  "version": "1.0.0",
+  "description": "A sample project that demonstrates how to test mongoose operations through jest with an in-memory database.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --runInBand ./test"
+  },
+  "keywords": [
+    "mongoose",
+    "inmemory",
+    "test",
+    "jest",
+    "mongodb"
+  ],
+  "author": "paula santamaría",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "mongodb-memory-server": "^6.0.1",
+    "mongoose": "^5.7.7"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
