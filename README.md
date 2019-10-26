@@ -2,7 +2,7 @@ A Node.js + Mongoose + Jest sample project that demonstrates how to test mongoos
 
 >This repo was build as an example for my article [Testing Node.js + Mongoose with an in-memory database](https://dev.to/paulasantamaria/testing-node-js-mongoose-with-an-in-memory-database-1445).
 
-# Run tests
+# Try it out
 ## 1. Install dependencies
 ```
 npm install
