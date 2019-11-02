@@ -60,21 +60,14 @@ describe('product ', () => {
      * Should throw an error when product doesn't have a name or price.
      */
     it('requires name and price', async () => {
-        try {
-            await productService.create(productMissingName);
-            throw new Error(`Should've thrown ValidationError`);
-        }
-        catch(err) {
-            expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
-        }
 
-        try {
-            await productService.create(productMissingPrice)
-            throw new Error(`Should've thrown ValidationError`);
-        }
-        catch(err) {
-            expect(err).toBeInstanceOf(mongoose.Error.ValidationError)
-        }
+        await expect(productService.create(productMissingName))
+            .rejects
+            .toBeInstanceOf(mongoose.Error.ValidationError);
+
+        await expect(productService.create(productMissingPrice))
+            .rejects
+            .toBeInstanceOf(mongoose.Error.ValidationError);
     });
 });
 
