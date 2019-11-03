@@ -49,6 +49,9 @@ describe('product getById ', () => {
     });
 });
 
+/**
+ * Seed the database with products.
+ */
 const createProducts = async () => {
     const createdIphone = await productModel.create(productIphone);
     productIphoneId = createdIphone.id;
