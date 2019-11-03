@@ -11,3 +11,12 @@ module.exports.create = async (product) => {
 
     await productModel.create(product);
 }
+
+/**
+ * Retrieves a product by id.
+ * @param {String} id Product unique identifier
+*/
+module.exports.getById = async (id) => {
+    const product = await productModel.findById(id);
+    return product;
+};

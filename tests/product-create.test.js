@@ -20,9 +20,9 @@ afterEach(async () => await dbHandler.clearDatabase());
 afterAll(async () => await dbHandler.closeDatabase());
 
 /**
- * Product test suite.
+ * Product create test suite.
  */
-describe('product ', () => {
+describe('product create ', () => {
 
     /**
      * Tests that a valid product can be created through the productService without throwing any errors.
