@@ -33,9 +33,9 @@ describe('product getById ', () => {
      * Should return null if getById doesn't find any product with the provided id.
      */
     it('should return null if nothing is found', async () => {
-        const foundProduct = await productService.getById(mongoose.Types.ObjectId());
-
-        expect(foundProduct).toBeNull();
+        await expect(productService.getById(mongoose.Types.ObjectId()))
+            .resolves
+            .toBeNull();
     });
 
     /**
