@@ -63,11 +63,11 @@ describe('product create ', () => {
 
         await expect(productService.create(productMissingName))
             .rejects
-            .toBeInstanceOf(mongoose.Error.ValidationError);
+            .toThrow(mongoose.Error.ValidationError);
 
         await expect(productService.create(productMissingPrice))
             .rejects
-            .toBeInstanceOf(mongoose.Error.ValidationError);
+            .toThrow(mongoose.Error.ValidationError);
     });
 });
 
