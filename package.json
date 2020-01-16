@@ -4,7 +4,9 @@
   "description": "A sample project that demonstrates how to test mongoose operations through jest with an in-memory database.",
   "main": "app.js",
   "scripts": {
-    "test": "jest --runInBand ./test"
+    "test": "jest --runInBand ./test",
+    "lint": "./node_modules/.bin/eslint ./",
+    "lint-fix": "./node_modules/.bin/eslint ./ --fix"
   },
   "keywords": [
     "mongoose",
@@ -19,6 +21,12 @@
     "mongoose": "^5.7.7"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "jest": "^24.9.0",
     "mongodb-memory-server": "^6.0.1"
   },
