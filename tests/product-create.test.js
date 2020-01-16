@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const mongoose = require('mongoose');
 
@@ -9,28 +9,35 @@ const productModel = require('../src/models/product');
 /**
  * Connect to a new in-memory database before running any tests.
  */
-beforeAll(async () => await dbHandler.connect());
+beforeAll(async () => {
+    await dbHandler.connect();
+});
 
 /**
  * Clear all test data after every test.
  */
-afterEach(async () => await dbHandler.clearDatabase());
+afterEach(async () => {
+    await dbHandler.clearDatabase();
+});
 
 /**
  * Remove and close the db and server.
  */
-afterAll(async () => await dbHandler.closeDatabase());
+afterAll(async () => {
+    await dbHandler.closeDatabase();
+});
 
 /**
  * Product create test suite.
  */
 describe('product create ', () => {
-
     /**
      * Tests that a valid product can be created through the productService without throwing any errors.
      */
     it('can be created correctly', async () => {
-        expect(async () => await productService.create(productComplete))
+        expect(async () => {
+            await productService.create(productComplete);
+        })
             .not
             .toThrow();
     });
@@ -40,7 +47,7 @@ describe('product create ', () => {
      */
     it('can be created without description', async () => {
         expect(async () => {
-            await productService.create(productMissingDescription)
+            await productService.create(productMissingDescription);
         })
             .not
             .toThrow();
@@ -62,7 +69,6 @@ describe('product create ', () => {
      * Should throw an error when product doesn't have a name or price.
      */
     it('requires name and price', async () => {
-
         await expect(productService.create(productMissingName))
             .rejects
             .toThrow(mongoose.Error.ValidationError);
@@ -73,7 +79,6 @@ describe('product create ', () => {
     });
 });
 
-
 const productComplete = {
     name: 'iPhone 11',
     price: 699,
@@ -82,7 +87,7 @@ const productComplete = {
 
 const productMissingDescription = {
     name: 'iPhone 11',
-    price: 699,
+    price: 699
 };
 
 const productMissingName = {

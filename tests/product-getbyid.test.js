@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const mongoose = require('mongoose');
 
@@ -9,28 +9,35 @@ const productModel = require('../src/models/product');
 /**
  * Connect to a new in-memory database before running any tests.
  */
-beforeAll(async () => await dbHandler.connect());
+beforeAll(async () => {
+    await dbHandler.connect();
+});
 
 /**
  * Seed the database.
  */
-beforeEach(async () => await createProducts());
+beforeEach(async () => {
+    await createProducts();
+});
 
 /**
  * Clear all test data after every test.
  */
-afterEach(async () => await dbHandler.clearDatabase());
+afterEach(async () => {
+    await dbHandler.clearDatabase();
+});
 
 /**
  * Remove and close the db and server.
  */
-afterAll(async () => await dbHandler.closeDatabase());
+afterAll(async () => {
+    await dbHandler.closeDatabase();
+});
 
 /**
  * Product getById test suite.
  */
 describe('product getById ', () => {
-
     /**
      * Should return null if getById doesn't find any product with the provided id.
      */
@@ -57,12 +64,10 @@ describe('product getById ', () => {
 const createProducts = async () => {
     const createdIphone = await productModel.create(productIphone);
     productIphoneId = createdIphone.id;
-    const createdFitbit = await productModel.create(productFitbit);
-    productFitbitId = createdFitbit.id;
-}
+    await productModel.create(productFitbit);
+};
 
 let productIphoneId;
-let productFitbitId;
 
 const productIphone = {
     name: 'iPhone 11',

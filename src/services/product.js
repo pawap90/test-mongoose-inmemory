@@ -12,7 +12,7 @@ module.exports.create = async (product) => {
         throw new Error('Missing product');
 
     await productModel.create(product);
-}
+};
 
 /**
  * Retrieves a product by id.
