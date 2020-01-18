@@ -20,7 +20,7 @@ npm test
 ```
 
 # Contribute
-Feel free to contribute to this package either by leaving your comments and suggestions in the Issues section or creating a PR. More and diverse test examples are always useful. Make sure to take a look at Jest docs and the existent examples to avoid repeating.
+Feel free to contribute to this project either by leaving your comments and suggestions in the Issues section or creating a PR. More and diverse test examples are always useful. Make sure to take a look at Jest docs and the existent examples to avoid repeating.
 
 # Tools
 Main tools used in this project:
