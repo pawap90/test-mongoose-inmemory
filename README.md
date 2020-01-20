@@ -6,7 +6,7 @@ A Node.js + Mongoose + Jest sample project that demonstrates **how to test mongo
 What you need to run this project:
 - Node.js
 
-(MongoDB is not required because it'll run in memory by the package `mongodb-memory-server`).
+(MongoDB is not required because it'll run in memory, handled by the package `mongodb-memory-server`).
 
 # Try it out
 ## 1. Install dependencies
